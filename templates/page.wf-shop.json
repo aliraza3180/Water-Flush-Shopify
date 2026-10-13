@@ -1,0 +1,265 @@
+{
+  "sections": {
+    "hero": {
+      "type": "wf-hero",
+      "blocks": {
+        "benefit_001": {
+          "type": "benefit",
+          "settings": {
+            "icon": "drop",
+            "text": "Helps Reduce Temporary Water Retention*"
+          }
+        },
+        "benefit_002": {
+          "type": "benefit",
+          "settings": {
+            "icon": "leaf",
+            "text": "Supports a Flatter, More Comfortable Feeling*"
+          }
+        },
+        "benefit_003": {
+          "type": "benefit",
+          "settings": {
+            "icon": "lotus",
+            "text": "Promotes Daily Wellness Support*"
+          }
+        },
+        "benefit_004": {
+          "type": "benefit",
+          "settings": {
+            "icon": "heart",
+            "text": "Fits Easily Into Your Daily Routine*"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_001",
+        "benefit_002",
+        "benefit_003",
+        "benefit_004"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/wf-shop-hero.jpg",
+        "image_mobile": "shopify://shop_images/wf-shop-hero-mobile.jpg",
+        "fade": 90,
+        "height": "large",
+        "tone": "white",
+        "heading_tag": "h1",
+        "heading_size": "xl",
+        "button_label": "",
+        "button_url": "shopify://pages/shop",
+        "image_alt": "Smiling woman on the beach beside the 60 and 120 capsule bottles of Brand Name Water Flush",
+        "eyebrow": "Choose Your Supply",
+        "heading": "Feel Lighter.\nMore Comfortable.",
+        "heading_accent": "Every Day.",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush helps support your body’s natural fluid balance so you can feel less bloated, more comfortable, and ready for whatever the day brings.*</p>"
+      }
+    },
+    "sizes": {
+      "type": "wf-size-selector",
+      "blocks": {
+        "option_005": {
+          "type": "option",
+          "settings": {
+            "variant_position": 1,
+            "title": "",
+            "text": "Perfect for getting started or travel.",
+            "badge": "",
+            "checks": "Same great formula\nConvenient 60-count size\nEasy daily routine\nFree U.S. shipping",
+            "image_alt": "Brand Name Water Flush, 60 capsule bottle"
+          }
+        },
+        "option_006": {
+          "type": "option",
+          "settings": {
+            "variant_position": 2,
+            "title": "",
+            "text": "Our best value for ongoing daily support.",
+            "badge": "Best Value",
+            "checks": "Same great formula\n120-count value size\nGreat for daily use\nFree U.S. shipping",
+            "image_alt": "Brand Name Water Flush, 120 capsule bottle"
+          }
+        }
+      },
+      "block_order": [
+        "option_005",
+        "option_006"
+      ],
+      "settings": {
+        "product": "brand-name-water-flush",
+        "layout": "wide",
+        "heading_tag": "h2",
+        "button_mode": "cart",
+        "button_label": "Add to Cart",
+        "button_url": "shopify://pages/shop",
+        "show_quantity": true,
+        "details_label": "View full details",
+        "price_pending_text": "$XX.XX",
+        "anchor": "shop",
+        "tone": "white",
+        "padding_top": 40,
+        "padding_bottom": 32,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "eyebrow": "",
+        "heading": "",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": ""
+      }
+    },
+    "trust": {
+      "type": "wf-trust-bar",
+      "blocks": {
+        "item_007": {
+          "type": "item",
+          "settings": {
+            "icon": "award",
+            "text": "GMP Certified\nFacility"
+          }
+        },
+        "item_008": {
+          "type": "item",
+          "settings": {
+            "icon": "flask",
+            "text": "3rd Party\nLab Tested"
+          }
+        },
+        "item_009": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "text": "High-Quality\nIngredients"
+          }
+        },
+        "item_00a": {
+          "type": "item",
+          "settings": {
+            "icon": "star",
+            "text": "Quality\nYou Can Trust"
+          }
+        },
+        "item_00b": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "text": "Free U.S.\nShipping",
+            "link": "shopify://pages/shipping-policy"
+          }
+        },
+        "item_00c": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "text": "Secure\nCheckout"
+          }
+        },
+        "item_00d": {
+          "type": "item",
+          "settings": {
+            "icon": "cycle",
+            "text": "30-Day Satisfaction\nGuarantee",
+            "link": "shopify://pages/satisfaction-guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "item_007",
+        "item_008",
+        "item_009",
+        "item_00a",
+        "item_00b",
+        "item_00c",
+        "item_00d"
+      ],
+      "settings": {
+        "label": "Product highlights",
+        "heading": "",
+        "style": "plain",
+        "tone": "white",
+        "padding_top": 16,
+        "padding_bottom": 32,
+        "decor_width": 240,
+        "decor_position": "bottom"
+      }
+    },
+    "bundles": {
+      "type": "wf-bundle-row",
+      "disabled": true,
+      "blocks": {
+        "tile_00e": {
+          "type": "tile",
+          "settings": {
+            "image_alt": "One bottle of Brand Name Water Flush",
+            "title": "1 Bottle",
+            "price": "$XX.XX",
+            "badge": "",
+            "url": ""
+          }
+        },
+        "tile_00f": {
+          "type": "tile",
+          "settings": {
+            "image_alt": "Three bottles of Brand Name Water Flush",
+            "title": "3 Bottles",
+            "price": "$XX.XX",
+            "badge": "Most Popular",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "tile_00e",
+        "tile_00f"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Stock Up & Save",
+        "heading_accent": "",
+        "text": "<p>Stay consistent and save more when you order multiple bottles of Brand Name Water Flush.</p>",
+        "heading_tag": "h2",
+        "tone": "white",
+        "padding_top": 8,
+        "padding_bottom": 40
+      }
+    },
+    "promise": {
+      "type": "wf-image-text",
+      "settings": {
+        "layout": "overlay",
+        "media_side": "left",
+        "media_shape": "rect",
+        "image": "shopify://shop_images/wf-shop-promise.jpg",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": true,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "image_alt": "Woman in a white cover-up sitting on rocks, looking out over the sea",
+        "eyebrow": "Our Promise",
+        "heading": "Your Satisfaction\nComes First.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>We stand behind the quality of Brand Name Water Flush. If you’re not completely satisfied, our 30-Day Satisfaction Guarantee has you covered.</p>",
+        "button_label": "Shop with Confidence",
+        "button_url": "shopify://pages/shop#shop",
+        "link_label": "See guarantee details",
+        "link_url": "shopify://pages/satisfaction-guarantee",
+        "decor_right": "shopify://shop_images/wf-decor-leaves-right.png"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "sizes",
+    "trust",
+    "bundles",
+    "promise"
+  ]
+}

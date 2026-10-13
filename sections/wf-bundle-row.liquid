@@ -1,0 +1,193 @@
+{%- liquid
+  assign s = section.settings
+-%}
+<div
+  id="WfBundle-{{ section.id }}"
+  class="wf wf-bundle wf--{{ s.tone }}"
+  style="--wf-pt: {{ s.padding_top }}px; --wf-pb: {{ s.padding_bottom }}px; --wf-cols: {{ section.blocks.size | at_least: 1 }};"
+>
+  <div class="wf-container">
+    <div class="wf-bundle__panel">
+      {%- render 'wf-heading', eyebrow: s.eyebrow, heading: s.heading, accent: s.heading_accent, text: s.text, tag: s.heading_tag, size: 'sm', class: 'wf-bundle__head' -%}
+      {%- if section.blocks.size > 0 -%}
+        <ul class="wf-bundle__tiles" role="list">
+          {%- for block in section.blocks -%}
+            {%- assign b = block.settings -%}
+            <li class="wf-tile{% if b.badge != blank %} wf-tile--badged{% endif %}" {{ block.shopify_attributes }}>
+              {%- if b.badge != blank -%}
+                <p class="wf-tile__badge">{{ b.badge | escape }}</p>
+              {%- endif -%}
+              {%- if b.url != blank -%}
+                <a class="wf-tile__card" href="{{ b.url }}">
+              {%- else -%}
+                <div class="wf-tile__card">
+              {%- endif -%}
+                {%- render 'wf-image', image: b.image, alt: b.image_alt, sizes: '(min-width: 990px) 12vw, 30vw', class: 'wf-tile__image', label: 'Bottles' -%}
+                <span class="wf-tile__title">{{ b.title | escape }}</span>
+                {%- if b.price != blank -%}
+                  <span class="wf-tile__price">{{ b.price | escape }}</span>
+                {%- endif -%}
+              {%- if b.url != blank -%}
+                </a>
+              {%- else -%}
+                </div>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "WF | Bundle Row",
+  "class": "wf-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Press Enter to start a new line."
+    },
+    {
+      "type": "textarea",
+      "id": "heading_accent",
+      "label": "Heading, teal line",
+      "info": "Shown in teal on its own line."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1 (page title)"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h2",
+      "info": "Use H1 once per page, in the first section."
+    },
+    {
+      "type": "select",
+      "id": "tone",
+      "label": "Background",
+      "options": [
+        {
+          "value": "white",
+          "label": "White"
+        },
+        {
+          "value": "tint",
+          "label": "Soft aqua tint"
+        },
+        {
+          "value": "aqua",
+          "label": "Pale aqua band"
+        }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Bundle",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image description (alt text)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "3 Bottles"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WF | Bundle Row",
+      "category": "Water Flush"
+    }
+  ]
+}
+{% endschema %}

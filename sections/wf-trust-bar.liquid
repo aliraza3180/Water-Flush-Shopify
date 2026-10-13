@@ -1,0 +1,266 @@
+{%- liquid
+  assign s = section.settings
+-%}
+{%- if section.blocks.size > 0 -%}
+  <div
+    id="WfTrust-{{ section.id }}"
+    class="wf wf-trust wf--{{ s.tone }} wf-trust--{{ s.style }}"
+    style="--wf-pt: {{ s.padding_top }}px; --wf-pb: {{ s.padding_bottom }}px;"
+  >
+    {%- render 'wf-decor', left: s.decor_left, right: s.decor_right, width: s.decor_width, position: s.decor_position -%}
+    <div class="wf-container">
+      {%- if s.heading != blank -%}
+        <h2 class="wf-trust__heading">{{ s.heading | escape }}</h2>
+      {%- endif -%}
+      <ul class="wf-chips wf-chips--{{ s.style }}" role="list" aria-label="{{ s.label | escape }}" style="--wf-cols: {{ section.blocks.size }}; --wf-cols-md: {% if section.blocks.size > 6 %}4{% else %}{{ section.blocks.size }}{% endif %};">
+        {%- for block in section.blocks -%}
+          <li class="wf-chips__item" {{ block.shopify_attributes }}>
+            <span class="wf-chip">{%- render 'wf-icon', name: block.settings.icon -%}</span>
+            {%- if block.settings.link != blank -%}
+              <a class="wf-chips__label" href="{{ block.settings.link }}">{{ block.settings.text | escape | newline_to_br }}</a>
+            {%- else -%}
+              <span class="wf-chips__label">{{ block.settings.text | escape | newline_to_br }}</span>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "WF | Trust Bar",
+  "class": "wf-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Accessible label",
+      "default": "Product highlights"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Icon style",
+      "options": [
+        {
+          "value": "chips",
+          "label": "Icons in round chips"
+        },
+        {
+          "value": "plain",
+          "label": "Plain icons"
+        }
+      ],
+      "default": "chips"
+    },
+    {
+      "type": "select",
+      "id": "tone",
+      "label": "Background",
+      "options": [
+        {
+          "value": "white",
+          "label": "White"
+        },
+        {
+          "value": "tint",
+          "label": "Soft aqua tint"
+        },
+        {
+          "value": "aqua",
+          "label": "Pale aqua band"
+        }
+      ],
+      "default": "aqua"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Corner decoration",
+      "info": "Leaves or water splash. Shown on desktop only."
+    },
+    {
+      "type": "image_picker",
+      "id": "decor_left",
+      "label": "Left decoration"
+    },
+    {
+      "type": "image_picker",
+      "id": "decor_right",
+      "label": "Right decoration"
+    },
+    {
+      "type": "range",
+      "id": "decor_width",
+      "label": "Decoration width",
+      "min": 120,
+      "max": 480,
+      "step": 20,
+      "unit": "px",
+      "default": 240
+    },
+    {
+      "type": "select",
+      "id": "decor_position",
+      "label": "Decoration position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "drop",
+              "label": "Drop"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "lotus",
+              "label": "Lotus"
+            },
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "bolt",
+              "label": "Bolt"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "cycle",
+              "label": "Cycle"
+            },
+            {
+              "value": "flask",
+              "label": "Flask"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check circle"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "card",
+              "label": "Card"
+            },
+            {
+              "value": "capsule",
+              "label": "Capsule"
+            },
+            {
+              "value": "mail",
+              "label": "Mail"
+            }
+          ],
+          "default": "shield"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "3rd Party Lab Tested"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WF | Trust Bar",
+      "category": "Water Flush"
+    }
+  ]
+}
+{% endschema %}

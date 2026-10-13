@@ -1,0 +1,613 @@
+{%- liquid
+  assign s = section.settings
+  assign checks = section.blocks | where: 'type', 'check'
+  assign rows = section.blocks | where: 'type', 'icon_row'
+  assign chips = section.blocks | where: 'type', 'chip'
+  assign has_list = false
+  if checks.size > 0 or rows.size > 0
+    assign has_list = true
+  endif
+-%}
+{%- capture list -%}
+  {%- if rows.size > 0 -%}
+    <ul class="wf-rows" role="list">
+      {%- for block in rows -%}
+        <li class="wf-rows__item" {{ block.shopify_attributes }}>
+          <span class="wf-chip wf-chip--sm">{%- render 'wf-icon', name: block.settings.icon -%}</span>
+          <span class="wf-rows__body">
+            <strong class="wf-rows__title">{{ block.settings.title | escape }}</strong>
+            {%- if block.settings.text != blank -%}
+              <span class="wf-rows__text">{{ block.settings.text | escape }}</span>
+            {%- endif -%}
+          </span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+  {%- if checks.size > 0 -%}
+    <ul class="wf-checks" role="list">
+      {%- for block in checks -%}
+        <li class="wf-checks__item" {{ block.shopify_attributes }}>
+          {%- render 'wf-icon', name: 'check-circle' -%}
+          <span class="wf-checks__body">
+            {%- if block.settings.title != blank -%}
+              <strong class="wf-checks__title">{{ block.settings.title | escape }}</strong>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <span class="wf-checks__text">{{ block.settings.text | escape }}</span>
+            {%- endif -%}
+          </span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+{%- endcapture -%}
+<div
+  id="WfSplit-{{ section.id }}"
+  class="wf wf-split wf--{{ s.tone }} wf-split--{{ s.layout }} wf-split--media-{{ s.media_side }} wf-split--shape-{{ s.media_shape }}{% if s.image == blank %} wf-split--no-image{% endif %}"
+  style="--wf-pt: {{ s.padding_top }}px; --wf-pb: {{ s.padding_bottom }}px; --wf-fade: {{ s.fade | divided_by: 100.0 }};"
+>
+  {%- render 'wf-decor', left: s.decor_left, right: s.decor_right, width: s.decor_width, position: s.decor_position -%}
+  {%- if s.layout != 'columns' -%}
+    <div class="wf-split__media">
+      {%- render 'wf-image', image: s.image, image_mobile: s.image_mobile, alt: s.image_alt, class: 'wf-split__image', label: 'Image, 1600 x 1400 px' -%}
+      {%- if s.script_text != blank -%}
+        <p class="wf-script">{{ s.script_text | escape | newline_to_br }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+  <div class="wf-container wf-split__inner">
+    <div class="wf-split__content">
+      {%- if s.show_seal -%}
+        <div class="wf-seal" role="img" aria-label="{{ s.seal_top | escape }} {{ s.seal_bottom | escape }}">
+          <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <defs>
+              <path id="WfSealTop-{{ section.id }}" d="M 18 60 A 42 42 0 0 1 102 60"/>
+              <path id="WfSealBottom-{{ section.id }}" d="M 14 60 A 46 46 0 0 0 106 60"/>
+            </defs>
+            <circle cx="60" cy="60" r="57" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="60" cy="60" r="27" fill="none" stroke="currentColor" stroke-width="1.500"/>
+            <path d="M48 60.500l8.500 8.500L73 51.500" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text class="wf-seal__text"><textPath href="#WfSealTop-{{ section.id }}" startOffset="50%" text-anchor="middle">{{ s.seal_top | escape }}</textPath></text>
+            <text class="wf-seal__text"><textPath href="#WfSealBottom-{{ section.id }}" startOffset="50%" text-anchor="middle">{{ s.seal_bottom | escape }}</textPath></text>
+          </svg>
+        </div>
+      {%- endif -%}
+      {%- render 'wf-heading', eyebrow: s.eyebrow, heading: s.heading, accent: s.heading_accent, heading_end: s.heading_end, text: s.text, tag: s.heading_tag, size: 'lg' -%}
+      {%- if s.layout != 'columns' -%}
+        {{ list }}
+      {%- endif -%}
+      {%- if chips.size > 0 -%}
+        <ul class="wf-chips wf-chips--inline" role="list" style="--wf-cols: {{ chips.size }};">
+          {%- for block in chips -%}
+            <li class="wf-chips__item" {{ block.shopify_attributes }}>
+              <span class="wf-chip">{%- render 'wf-icon', name: block.settings.icon -%}</span>
+              <span class="wf-chips__label">{{ block.settings.text | escape | newline_to_br }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      {%- if s.button_label != blank or s.link_label != blank -%}
+        <div class="wf-actions">
+          {%- render 'wf-button', label: s.button_label, url: s.button_url -%}
+          {%- if s.link_label != blank and s.link_url != blank -%}
+            <a class="wf-link" href="{{ s.link_url }}">{{ s.link_label | escape }}</a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+    {%- if s.layout == 'columns' -%}
+      {%- if s.image != blank or request.design_mode -%}
+        <div class="wf-split__figure">
+          {%- render 'wf-image', image: s.image, alt: s.image_alt, sizes: '(min-width: 990px) 30vw, 70vw', class: 'wf-split__image', label: 'Image, 1200 x 1200 px' -%}
+        </div>
+      {%- endif -%}
+      {%- if has_list -%}
+        <div class="wf-split__list">{{ list }}</div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "WF | Image with Text",
+  "class": "wf-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "overlay",
+          "label": "Photo behind the text"
+        },
+        {
+          "value": "split",
+          "label": "Photo fills one half"
+        },
+        {
+          "value": "columns",
+          "label": "Text, small image, list"
+        }
+      ],
+      "default": "overlay"
+    },
+    {
+      "type": "select",
+      "id": "media_side",
+      "label": "Photo side",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right",
+      "info": "The text sits on the other side."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1600 x 1400 px. For \"Photo behind the text\" use 2400 x 1000 px."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image on phones"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image description (alt text)"
+    },
+    {
+      "type": "select",
+      "id": "media_shape",
+      "label": "Small image shape",
+      "options": [
+        {
+          "value": "rect",
+          "label": "Rectangle"
+        },
+        {
+          "value": "round",
+          "label": "Circle"
+        }
+      ],
+      "default": "rect",
+      "info": "Used by the \"Text, small image, list\" layout."
+    },
+    {
+      "type": "range",
+      "id": "fade",
+      "label": "White fade behind the text",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 90,
+      "info": "Keeps the text readable over the photo."
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Press Enter to start a new line."
+    },
+    {
+      "type": "textarea",
+      "id": "heading_accent",
+      "label": "Heading, teal line",
+      "info": "Shown in teal on its own line."
+    },
+    {
+      "type": "textarea",
+      "id": "heading_end",
+      "label": "Heading, line after the teal one"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1 (page title)"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h2",
+      "info": "Use H1 once per page, in the first section."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Text link label"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Text link"
+    },
+    {
+      "type": "header",
+      "content": "Extras"
+    },
+    {
+      "type": "textarea",
+      "id": "script_text",
+      "label": "Handwritten text over the photo",
+      "info": "One short line per row."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_seal",
+      "label": "Show guarantee seal",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "seal_top",
+      "label": "Seal, top text",
+      "default": "30-DAY"
+    },
+    {
+      "type": "text",
+      "id": "seal_bottom",
+      "label": "Seal, bottom text",
+      "default": "GUARANTEE"
+    },
+    {
+      "type": "select",
+      "id": "tone",
+      "label": "Background",
+      "options": [
+        {
+          "value": "white",
+          "label": "White"
+        },
+        {
+          "value": "tint",
+          "label": "Soft aqua tint"
+        },
+        {
+          "value": "aqua",
+          "label": "Pale aqua band"
+        }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "header",
+      "content": "Corner decoration",
+      "info": "Leaves or water splash. Shown on desktop only."
+    },
+    {
+      "type": "image_picker",
+      "id": "decor_left",
+      "label": "Left decoration"
+    },
+    {
+      "type": "image_picker",
+      "id": "decor_right",
+      "label": "Right decoration"
+    },
+    {
+      "type": "range",
+      "id": "decor_width",
+      "label": "Decoration width",
+      "min": 120,
+      "max": 480,
+      "step": 20,
+      "unit": "px",
+      "default": 240
+    },
+    {
+      "type": "select",
+      "id": "decor_position",
+      "label": "Decoration position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "check",
+      "name": "Checklist item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Bold title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "High-Quality Ingredients"
+        }
+      ]
+    },
+    {
+      "type": "icon_row",
+      "name": "Icon row",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "drop",
+              "label": "Drop"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "lotus",
+              "label": "Lotus"
+            },
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "bolt",
+              "label": "Bolt"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "cycle",
+              "label": "Cycle"
+            },
+            {
+              "value": "flask",
+              "label": "Flask"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check circle"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "card",
+              "label": "Card"
+            },
+            {
+              "value": "capsule",
+              "label": "Capsule"
+            },
+            {
+              "value": "mail",
+              "label": "Mail"
+            }
+          ],
+          "default": "drop"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Supports Healthy Fluid Balance"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "chip",
+      "name": "Icon chip",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "drop",
+              "label": "Drop"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "lotus",
+              "label": "Lotus"
+            },
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "bolt",
+              "label": "Bolt"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "cycle",
+              "label": "Cycle"
+            },
+            {
+              "value": "flask",
+              "label": "Flask"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check circle"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "card",
+              "label": "Card"
+            },
+            {
+              "value": "capsule",
+              "label": "Capsule"
+            },
+            {
+              "value": "mail",
+              "label": "Mail"
+            }
+          ],
+          "default": "shield"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "High-Quality Ingredients"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WF | Image with Text",
+      "category": "Water Flush"
+    }
+  ]
+}
+{% endschema %}

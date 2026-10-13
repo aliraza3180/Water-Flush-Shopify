@@ -1,0 +1,299 @@
+{%- liquid
+  assign s = section.settings
+  assign eager = false
+  if section.index == 1
+    assign eager = true
+  endif
+-%}
+<div
+  id="WfHero-{{ section.id }}"
+  class="wf wf-hero wf--{{ s.tone }} wf-hero--{{ s.height }}{% if s.image == blank %} wf-hero--no-image{% endif %}"
+  style="--wf-fade: {{ s.fade | divided_by: 100.0 }};"
+>
+  <div class="wf-hero__media">
+    {%- render 'wf-image', image: s.image, image_mobile: s.image_mobile, alt: s.image_alt, sizes: '100vw', eager: eager, class: 'wf-hero__image', label: 'Hero image, 2400 x 1300 px' -%}
+  </div>
+  <div class="wf-container wf-hero__inner">
+    <div class="wf-hero__content">
+      {%- render 'wf-heading', eyebrow: s.eyebrow, heading: s.heading, accent: s.heading_accent, heading_end: s.heading_end, text: s.text, tag: s.heading_tag, size: s.heading_size -%}
+      {%- if s.button_label != blank -%}
+        <div class="wf-actions">
+          {%- render 'wf-button', label: s.button_label, url: s.button_url -%}
+        </div>
+      {%- endif -%}
+      {%- if section.blocks.size > 0 -%}
+        <ul class="wf-chips wf-chips--hero" role="list" style="--wf-cols: {{ section.blocks.size }}; --wf-cols-md: {% if section.blocks.size > 6 %}4{% else %}{{ section.blocks.size }}{% endif %};">
+          {%- for block in section.blocks -%}
+            <li class="wf-chips__item" {{ block.shopify_attributes }}>
+              <span class="wf-chip">{%- render 'wf-icon', name: block.settings.icon -%}</span>
+              <span class="wf-chips__label">{{ block.settings.text | escape | newline_to_br }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "WF | Hero",
+  "class": "wf-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "2400 x 1300 px. Keep the left half calm so the text stays readable."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image on phones",
+      "info": "1200 x 1000 px. Optional."
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image description (alt text)"
+    },
+    {
+      "type": "range",
+      "id": "fade",
+      "label": "White fade behind the text",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 90,
+      "info": "Keeps the text readable over the photo."
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Height",
+      "options": [
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "select",
+      "id": "tone",
+      "label": "Background",
+      "options": [
+        {
+          "value": "white",
+          "label": "White"
+        },
+        {
+          "value": "tint",
+          "label": "Soft aqua tint"
+        },
+        {
+          "value": "aqua",
+          "label": "Pale aqua band"
+        }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Press Enter to start a new line."
+    },
+    {
+      "type": "textarea",
+      "id": "heading_accent",
+      "label": "Heading, teal line",
+      "info": "Shown in teal on its own line."
+    },
+    {
+      "type": "textarea",
+      "id": "heading_end",
+      "label": "Heading, line after the teal one"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1 (page title)"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h1",
+      "info": "Use H1 once per page, in the first section."
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "xl",
+          "label": "Large"
+        },
+        {
+          "value": "xlm",
+          "label": "Medium"
+        }
+      ],
+      "default": "xl",
+      "info": "Use Medium when a long headline runs into the bottles."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "drop",
+              "label": "Drop"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "lotus",
+              "label": "Lotus"
+            },
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "bolt",
+              "label": "Bolt"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "cycle",
+              "label": "Cycle"
+            },
+            {
+              "value": "flask",
+              "label": "Flask"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check circle"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "card",
+              "label": "Card"
+            },
+            {
+              "value": "capsule",
+              "label": "Capsule"
+            },
+            {
+              "value": "mail",
+              "label": "Mail"
+            }
+          ],
+          "default": "drop"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Helps Reduce Temporary Water Retention*"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WF | Hero",
+      "category": "Water Flush"
+    }
+  ]
+}
+{% endschema %}

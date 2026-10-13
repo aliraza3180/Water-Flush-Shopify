@@ -1,0 +1,29 @@
+{%- doc -%}
+  One numbered accordion row of the "WF | FAQ" section.
+
+  @param {number} number - Number shown in the round badge
+  @param {string} title - Row title (a question or a group name)
+  @param {string} body - HTML shown when the row is open
+  @param {boolean} [lead] - Style as the first group header
+  @param {boolean} [open] - Open on page load
+  @param {number} [level] - Heading level of the title, 2 or 3. Defaults to 3
+  @param {string} [attributes] - Theme editor attributes of the block
+
+  @example
+  {% render 'wf-faq-row', number: 2, title: block.settings.question, body: answer_html, attributes: block.shopify_attributes %}
+{%- enddoc -%}
+{%- assign title_tag = 'h3' -%}
+{%- if level == 2 -%}
+  {%- assign title_tag = 'h2' -%}
+{%- endif -%}
+<details class="wf-faq__row{% if lead %} wf-faq__row--lead{% endif %}" {% if open %}open{% endif %} {{ attributes }}>
+  <summary>
+    <span class="wf-faq__num">{{ number }}</span>
+    <{{ title_tag }} class="wf-faq__title{% if lead %} wf-faq__title--lead{% endif %}">{{ title | escape }}</{{ title_tag }}>
+    <span class="wf-faq__toggle" aria-hidden="true">
+      {%- render 'wf-icon', name: 'plus' -%}
+      {%- render 'wf-icon', name: 'minus' -%}
+    </span>
+  </summary>
+  <div class="wf-faq__panel">{{ body }}</div>
+</details>

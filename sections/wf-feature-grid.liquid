@@ -1,0 +1,275 @@
+{%- liquid
+  assign s = section.settings
+-%}
+<div
+  id="WfGrid-{{ section.id }}"
+  class="wf wf-grid wf--{{ s.tone }} wf-grid--head-{{ s.heading_position }} wf-grid--{{ s.card_style }}"
+  style="--wf-pt: {{ s.padding_top }}px; --wf-pb: {{ s.padding_bottom }}px; --wf-cols: {{ section.blocks.size | at_least: 1 }};"
+>
+  {%- render 'wf-decor', left: s.decor_left, right: s.decor_right, width: s.decor_width, position: s.decor_position -%}
+  <div class="wf-container wf-grid__inner">
+    <div class="wf-grid__head">
+      {%- render 'wf-heading', eyebrow: s.eyebrow, heading: s.heading, accent: s.heading_accent, heading_end: s.heading_end, text: s.text, tag: s.heading_tag, size: 'lg' -%}
+      {%- if s.button_label != blank -%}
+        <div class="wf-actions">
+          {%- render 'wf-button', label: s.button_label, url: s.button_url -%}
+        </div>
+      {%- endif -%}
+    </div>
+    {%- if section.blocks.size > 0 -%}
+      <ul class="wf-grid__cards" role="list">
+        {%- for block in section.blocks -%}
+          <li class="wf-card wf-card--feature" {{ block.shopify_attributes }}>
+            {%- render 'wf-image', image: block.settings.image, alt: block.settings.image_alt, sizes: '(min-width: 990px) 20vw, (min-width: 750px) 25vw, 50vw', class: 'wf-card__image', label: 'Card image' -%}
+            <div class="wf-card__body">
+              {%- if block.settings.title != blank -%}
+                <h3 class="wf-card__title">{{ block.settings.title | escape }}</h3>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <div class="wf-card__text rte">{{ block.settings.text }}</div>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "WF | Feature Grid",
+  "class": "wf-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "Heading position",
+      "options": [
+        {
+          "value": "side",
+          "label": "Left of the cards"
+        },
+        {
+          "value": "top",
+          "label": "Above the cards, centred"
+        }
+      ],
+      "default": "top"
+    },
+    {
+      "type": "select",
+      "id": "card_style",
+      "label": "Card style",
+      "options": [
+        {
+          "value": "photo",
+          "label": "Tall photo, centred caption"
+        },
+        {
+          "value": "image",
+          "label": "Image on top, text below"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Press Enter to start a new line."
+    },
+    {
+      "type": "textarea",
+      "id": "heading_accent",
+      "label": "Heading, teal line",
+      "info": "Shown in teal on its own line."
+    },
+    {
+      "type": "textarea",
+      "id": "heading_end",
+      "label": "Heading, line after the teal one"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1 (page title)"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h2",
+      "info": "Use H1 once per page, in the first section."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "tone",
+      "label": "Background",
+      "options": [
+        {
+          "value": "white",
+          "label": "White"
+        },
+        {
+          "value": "tint",
+          "label": "Soft aqua tint"
+        },
+        {
+          "value": "aqua",
+          "label": "Pale aqua band"
+        }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "header",
+      "content": "Corner decoration",
+      "info": "Leaves or water splash. Shown on desktop only."
+    },
+    {
+      "type": "image_picker",
+      "id": "decor_left",
+      "label": "Left decoration"
+    },
+    {
+      "type": "image_picker",
+      "id": "decor_right",
+      "label": "Right decoration"
+    },
+    {
+      "type": "range",
+      "id": "decor_width",
+      "label": "Decoration width",
+      "min": 120,
+      "max": 480,
+      "step": 20,
+      "unit": "px",
+      "default": 240
+    },
+    {
+      "type": "select",
+      "id": "decor_position",
+      "label": "Decoration position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image description (alt text)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Card title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WF | Feature Grid",
+      "category": "Water Flush"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,25 @@
+{%- doc -%}
+  "Shop Now" button in the header, set in Theme settings > WF | Brand.
+  Rendered from snippets/header-actions.liquid (desktop, before the cart icon)
+  and from snippets/header-drawer.liquid (phone menu, below the links).
+
+  @param {boolean} [drawer] - Render the full-width version for the phone menu
+
+  @example
+  {% render 'wf-header-cta' %}
+{%- enddoc -%}
+{%- if settings.wf_header_cta_label != blank and settings.wf_header_cta_link != blank -%}
+  {%- if drawer -%}
+    <div class="wf-drawer-cta">
+      <a class="wf-drawer-cta__button button" href="{{ settings.wf_header_cta_link }}">
+        <span>{{ settings.wf_header_cta_label | escape }}</span>
+        {%- render 'wf-icon', name: 'arrow' -%}
+      </a>
+    </div>
+  {%- else -%}
+    <a class="wf-header-cta button" href="{{ settings.wf_header_cta_link }}">
+      <span>{{ settings.wf_header_cta_label | escape }}</span>
+      {%- render 'wf-icon', name: 'arrow' -%}
+    </a>
+  {%- endif -%}
+{%- endif -%}

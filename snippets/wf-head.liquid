@@ -1,0 +1,17 @@
+{%- doc -%}
+  Loads the stylesheet for the "WF |" sections and passes the brand colours
+  from Theme settings > WF | Brand to it. Rendered once from snippets/stylesheets.liquid.
+
+  @example
+  {% render 'wf-head' %}
+{%- enddoc -%}
+{{ 'wf-sections.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  :root {
+    --wf-teal: {{ settings.wf_teal | default: '#008BA3' }};
+    --wf-teal-text: {{ settings.wf_teal_text | default: '#007A90' }};
+    --wf-aqua: {{ settings.wf_aqua | default: '#E5F9FA' }};
+    --wf-tint: {{ settings.wf_tint | default: '#F3FBFD' }};
+    --wf-line: {{ settings.wf_line | default: '#CFEAF0' }};
+  }
+{%- endstyle -%}

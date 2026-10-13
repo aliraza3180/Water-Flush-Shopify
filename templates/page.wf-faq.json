@@ -1,0 +1,481 @@
+{
+  "sections": {
+    "hero": {
+      "type": "wf-hero",
+      "settings": {
+        "image": "shopify://shop_images/wf-faq-hero.jpg",
+        "image_mobile": "shopify://shop_images/wf-faq-hero-mobile.jpg",
+        "fade": 90,
+        "height": "medium",
+        "tone": "white",
+        "heading_tag": "h1",
+        "heading_size": "xlm",
+        "button_label": "Shop Now",
+        "button_url": "shopify://pages/shop",
+        "image_alt": "The two bottles of Brand Name Water Flush on a stone in the sea beside a smiling woman",
+        "eyebrow": "Frequently Asked Questions",
+        "heading": "Answers for",
+        "heading_accent": "Your Everyday",
+        "heading_end": "Wellness Routine.",
+        "text": "<p>Get the answers you need about Brand Name Water Flush, including how it works, how to take it, ingredients, product details, and more.</p>"
+      }
+    },
+    "highlights": {
+      "type": "wf-trust-bar",
+      "blocks": {
+        "item_001": {
+          "type": "item",
+          "settings": {
+            "icon": "drop",
+            "text": "Helps Reduce\nTemporary\nWater Retention*"
+          }
+        },
+        "item_002": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "text": "Supports a Flatter,\nMore Comfortable\nFeeling*"
+          }
+        },
+        "item_003": {
+          "type": "item",
+          "settings": {
+            "icon": "lotus",
+            "text": "Promotes\nDaily\nWellness Support*"
+          }
+        },
+        "item_004": {
+          "type": "item",
+          "settings": {
+            "icon": "bolt",
+            "text": "A Simple Addition\nto Your Daily\nRoutine*"
+          }
+        },
+        "item_005": {
+          "type": "item",
+          "settings": {
+            "icon": "heart",
+            "text": "Fits Easily Into\nYour Active\nLifestyle*"
+          }
+        },
+        "item_006": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "text": "High-Quality\nIngredients"
+          }
+        },
+        "item_007": {
+          "type": "item",
+          "settings": {
+            "icon": "flask",
+            "text": "3rd Party\nLab Tested"
+          }
+        },
+        "item_008": {
+          "type": "item",
+          "settings": {
+            "icon": "award",
+            "text": "GMP Certified\nFacility"
+          }
+        }
+      },
+      "block_order": [
+        "item_001",
+        "item_002",
+        "item_003",
+        "item_004",
+        "item_005",
+        "item_006",
+        "item_007",
+        "item_008"
+      ],
+      "settings": {
+        "label": "Product highlights",
+        "heading": "",
+        "style": "chips",
+        "tone": "white",
+        "padding_top": 32,
+        "padding_bottom": 36,
+        "decor_width": 240,
+        "decor_position": "bottom"
+      }
+    },
+    "questions": {
+      "type": "wf-faq",
+      "blocks": {
+        "category_009": {
+          "type": "category",
+          "settings": {
+            "title": "General Questions"
+          }
+        },
+        "question_00a": {
+          "type": "question",
+          "settings": {
+            "question": "What is Brand Name Water Flush?",
+            "answer": "<p>Brand Name Water Flush is a dietary supplement combining vitamin B6, potassium, chloride, and selected botanicals. It is made to support normal fluid balance as part of an everyday wellness routine.*</p>"
+          }
+        },
+        "question_00b": {
+          "type": "question",
+          "settings": {
+            "question": "What is Water Flush designed to support?",
+            "answer": "<p>Water Flush is formulated for adults interested in supporting healthy fluid balance and managing occasional feelings of temporary water retention.* Individual experiences vary.</p>"
+          }
+        },
+        "question_00c": {
+          "type": "question",
+          "settings": {
+            "question": "Is Water Flush a weight-loss product?",
+            "answer": "<p>Water Flush is not intended for fat loss. Temporary changes in body water are not the same as losing body fat, and Water Flush is not a weight-loss treatment.</p>"
+          }
+        },
+        "question_00d": {
+          "type": "question",
+          "settings": {
+            "question": "Is this the same formula as another product of the brand?",
+            "answer": "<p>Yes. Brand Name Water Flush uses the same formula as another product of the brand. It has its own branding and packaging, not a different formula.</p>"
+          }
+        },
+        "question_00e": {
+          "type": "question",
+          "settings": {
+            "question": "Can I take Water Flush every day?",
+            "answer": "<p>Follow the product label and do not exceed the recommended dose. If you expect to use it regularly, particularly if you have a medical condition or take medication, ask a healthcare professional whether it is appropriate for you.</p>"
+          }
+        },
+        "category_00f": {
+          "type": "category",
+          "settings": {
+            "title": "Ingredients & Formula"
+          }
+        },
+        "question_00g": {
+          "type": "question",
+          "settings": {
+            "question": "What ingredients are in Water Flush?",
+            "answer": "<p>Each capsule contains vitamin B6, chloride, potassium, dandelion leaf extract, green tea leaf extract, cranberry fruit powder, juniper berry extract, buchu leaf extract, apple cider vinegar extract, corn silk powder, paprika powder, and watermelon fruit powder. See the Supplement Facts label for exact amounts and other ingredients.</p>"
+          }
+        },
+        "question_00h": {
+          "type": "question",
+          "settings": {
+            "question": "Does Water Flush contain caffeine?",
+            "answer": "<p>It contains green tea leaf extract. The caffeine content is not stated on the label, so we do not describe the product as caffeine-free. If you are sensitive to caffeine, please contact customer support before use.</p>"
+          }
+        },
+        "question_00i": {
+          "type": "question",
+          "settings": {
+            "question": "Is Water Flush vegan or vegetarian?",
+            "answer": "<p>No. The capsule is made with bovine gelatin, so Water Flush is not vegetarian or vegan.</p>"
+          }
+        },
+        "question_00j": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "question": "Is Water Flush non-GMO?",
+            "answer": "<p>This answer is waiting for confirmation.</p>"
+          }
+        },
+        "question_00k": {
+          "type": "question",
+          "settings": {
+            "question": "Does Water Flush contain magnesium?",
+            "answer": "<p>Magnesium is not one of the active nutrients in the Supplement Facts panel. Vegetable magnesium stearate is listed among the other ingredients; that is not the same as a magnesium supplement dose.</p>"
+          }
+        },
+        "category_00l": {
+          "type": "category",
+          "settings": {
+            "title": "Usage & Dosage"
+          }
+        },
+        "question_00m": {
+          "type": "question",
+          "settings": {
+            "question": "How do I take Brand Name Water Flush?",
+            "answer": "<p>Take 1 capsule 1 to 2 times daily, preferably with meals, or as directed by a healthcare professional. Follow the directions printed on your bottle.</p>"
+          }
+        },
+        "question_00n": {
+          "type": "question",
+          "settings": {
+            "question": "How long does each bottle last?",
+            "answer": "<p>At one capsule per day, 60 capsules last about 60 days and 120 capsules about 120 days. At two capsules per day, they last about 30 and 60 days.</p>"
+          }
+        },
+        "question_00o": {
+          "type": "question",
+          "settings": {
+            "question": "When should I expect to notice a difference?",
+            "answer": "<p>Responses vary from person to person. We do not promise a particular timeframe or amount of change.</p>"
+          }
+        },
+        "category_00p": {
+          "type": "category",
+          "settings": {
+            "title": "Safety & Side Effects"
+          }
+        },
+        "question_00q": {
+          "type": "question",
+          "settings": {
+            "question": "Who should consult a healthcare professional before using it?",
+            "answer": "<p>Do not exceed recommended dose. Pregnant or nursing mothers, children under 18, and individuals with a known medical condition should consult a physician before using this or any dietary supplement. If you take medication, especially medication that affects fluid balance, blood pressure, or potassium, check with a healthcare professional first.</p>"
+          }
+        },
+        "question_00r": {
+          "type": "question",
+          "settings": {
+            "question": "Can I use Water Flush for persistent swelling or edema?",
+            "answer": "<p>No. Persistent or sudden swelling can have medical causes and should be evaluated by a healthcare professional. Water Flush is not intended to diagnose, treat, cure, or prevent any disease.</p>"
+          }
+        },
+        "question_00s": {
+          "type": "question",
+          "settings": {
+            "question": "Are there any possible side effects?",
+            "answer": "<p>Herbal ingredients and green tea extract may not be appropriate for everyone, and individual reactions or medication interactions are possible. Stop use and seek medical advice if you experience an unexpected reaction.</p>"
+          }
+        },
+        "question_00t": {
+          "type": "question",
+          "settings": {
+            "question": "Does Water Flush contain allergens?",
+            "answer": "<p>This product is manufactured and packaged in a facility which may also process milk, soy, wheat, egg, peanuts, tree nuts, fish and crustacean shellfish. The capsule is made with bovine gelatin.</p>"
+          }
+        },
+        "category_00u": {
+          "type": "category",
+          "settings": {
+            "title": "Product Details"
+          }
+        },
+        "question_00v": {
+          "type": "question",
+          "settings": {
+            "question": "What bottle sizes are available?",
+            "answer": "<p>Brand Name Water Flush comes in 60-capsule and 120-capsule bottles. <a href=\"/pages/shop\">Choose your size</a>.</p>"
+          }
+        },
+        "question_00w": {
+          "type": "question",
+          "settings": {
+            "question": "Where is Water Flush made?",
+            "answer": "<p>Water Flush is manufactured for Brand Name, a Parent Company, based in City, State. The label carries a GMP Certified Facility seal.</p>"
+          }
+        },
+        "question_00x": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "question": "Is Water Flush third-party tested?",
+            "answer": "<p>This answer is waiting for confirmation.</p>"
+          }
+        },
+        "question_00y": {
+          "type": "question",
+          "settings": {
+            "question": "How should I store Water Flush?",
+            "answer": "<p>Store in a cool, dry place. Keep out of the reach of children. Do not use if the safety seal is damaged or missing.</p>"
+          }
+        },
+        "category_00z": {
+          "type": "category",
+          "settings": {
+            "title": "Orders & Shipping"
+          }
+        },
+        "question_010": {
+          "type": "question",
+          "settings": {
+            "question": "Can I purchase more than one bottle?",
+            "answer": "<p>Yes. Choose your size and quantity on the <a href=\"/pages/shop\">Shop page</a>.</p>"
+          }
+        },
+        "question_011": {
+          "type": "question",
+          "settings": {
+            "question": "How much is shipping?",
+            "answer": "<p>Shipping is free on all orders placed through our website within the United States, with no minimum purchase. See our <a href=\"/pages/shipping-policy\">Shipping Policy</a>.</p>"
+          }
+        },
+        "question_012": {
+          "type": "question",
+          "settings": {
+            "question": "How will the charge appear on my statement?",
+            "answer": "<p>Brand Name is a brand of Parent Company, Inc. All purchases are billed under PARENT COMPANY.</p>"
+          }
+        },
+        "category_013": {
+          "type": "category",
+          "settings": {
+            "title": "Returns & Guarantee"
+          }
+        },
+        "question_014": {
+          "type": "question",
+          "settings": {
+            "question": "What is your satisfaction guarantee?",
+            "answer": "<p>We stand behind our products with a 30-day satisfaction guarantee. It applies to your first purchase of a product and is limited to one refund per customer or household. See the <a href=\"/pages/satisfaction-guarantee\">30-Day Satisfaction Guarantee</a> page for how to request it.</p>"
+          }
+        },
+        "category_015": {
+          "type": "category",
+          "settings": {
+            "title": "Miscellaneous Questions"
+          }
+        },
+        "question_016": {
+          "type": "question",
+          "settings": {
+            "question": "How can I contact customer support?",
+            "answer": "<p>Send us a message through our <a href=\"/pages/contact\">Contact page</a> and our customer support team will get back to you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_009",
+        "question_00a",
+        "question_00b",
+        "question_00c",
+        "question_00d",
+        "question_00e",
+        "category_00f",
+        "question_00g",
+        "question_00h",
+        "question_00i",
+        "question_00j",
+        "question_00k",
+        "category_00l",
+        "question_00m",
+        "question_00n",
+        "question_00o",
+        "category_00p",
+        "question_00q",
+        "question_00r",
+        "question_00s",
+        "question_00t",
+        "category_00u",
+        "question_00v",
+        "question_00w",
+        "question_00x",
+        "question_00y",
+        "category_00z",
+        "question_010",
+        "question_011",
+        "question_012",
+        "category_013",
+        "question_014",
+        "category_015",
+        "question_016"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "heading_accent": "",
+        "text": "",
+        "heading_tag": "h2",
+        "columns": "2",
+        "structured_data": true,
+        "tone": "white",
+        "padding_top": 8,
+        "padding_bottom": 40,
+        "decor_width": 220,
+        "decor_position": "bottom"
+      }
+    },
+    "help": {
+      "type": "wf-image-text",
+      "settings": {
+        "layout": "overlay",
+        "media_side": "right",
+        "media_shape": "rect",
+        "image": "shopify://shop_images/wf-faq-help.jpg",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": false,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "decor_width": 240,
+        "decor_position": "top",
+        "image_alt": "Woman in a white shirt sitting on rocks by the sea with mountains behind her",
+        "eyebrow": "Still Have Questions?",
+        "heading": "We’re Here to Help.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>If you don’t see your question here, our customer support team is ready to assist you.</p>",
+        "button_label": "Contact Us",
+        "button_url": "shopify://pages/contact",
+        "decor_left": "shopify://shop_images/wf-decor-leaves-left.png"
+      }
+    },
+    "sizes": {
+      "type": "wf-size-selector",
+      "blocks": {
+        "option_017": {
+          "type": "option",
+          "settings": {
+            "variant_position": 1,
+            "title": "",
+            "text": "Perfect for getting started or travel.",
+            "badge": "",
+            "checks": "",
+            "image_alt": "Brand Name Water Flush, 60 capsule bottle"
+          }
+        },
+        "option_018": {
+          "type": "option",
+          "settings": {
+            "variant_position": 2,
+            "title": "",
+            "text": "Our best value for ongoing daily support.",
+            "badge": "Best Value",
+            "checks": "",
+            "image_alt": "Brand Name Water Flush, 120 capsule bottle"
+          }
+        }
+      },
+      "block_order": [
+        "option_017",
+        "option_018"
+      ],
+      "settings": {
+        "product": "brand-name-water-flush",
+        "layout": "side",
+        "heading_tag": "h2",
+        "button_mode": "cart",
+        "button_label": "Add to Cart",
+        "button_url": "shopify://pages/shop",
+        "show_quantity": false,
+        "details_label": "",
+        "price_pending_text": "$XX.XX",
+        "anchor": "",
+        "background": "shopify://shop_images/wf-water-band.jpg",
+        "tone": "tint",
+        "padding_top": 56,
+        "padding_bottom": 72,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "eyebrow": "Ready to Feel the Difference?",
+        "heading": "Support Your\nWellness Routine\nwith Brand Name.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Choose the size that works best for you and make Brand Name Water Flush part of your daily wellness routine.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "highlights",
+    "questions",
+    "help",
+    "sizes"
+  ]
+}

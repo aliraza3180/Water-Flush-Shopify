@@ -1,0 +1,25 @@
+{%- doc -%}
+  Corner decorations (leaves, water splash) for the "WF |" sections. Decorative only.
+
+  @param {object} [left] - Image shown at the left edge
+  @param {object} [right] - Image shown at the right edge
+  @param {number} [width] - Width in px on desktop. Defaults to 220
+  @param {string} [position] - top, middle or bottom. Defaults to bottom
+
+  @example
+  {% render 'wf-decor', left: s.decor_left, right: s.decor_right, width: s.decor_width, position: s.decor_position %}
+{%- enddoc -%}
+{%- liquid
+  assign decor_w = width | default: 220
+  assign decor_pos = position | default: 'bottom'
+-%}
+{%- if left != blank -%}
+  <div class="wf-decor wf-decor--left wf-decor--{{ decor_pos }}" style="--wf-decor-w: {{ decor_w }}px;" aria-hidden="true">
+    {{ left | image_url: width: 800 | image_tag: widths: '300, 500, 800', sizes: '30vw', alt: '', loading: 'lazy' }}
+  </div>
+{%- endif -%}
+{%- if right != blank -%}
+  <div class="wf-decor wf-decor--right wf-decor--{{ decor_pos }}" style="--wf-decor-w: {{ decor_w }}px;" aria-hidden="true">
+    {{ right | image_url: width: 800 | image_tag: widths: '300, 500, 800', sizes: '30vw', alt: '', loading: 'lazy' }}
+  </div>
+{%- endif -%}

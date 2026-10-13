@@ -1,0 +1,31 @@
+{%- doc -%}
+  Pill button with an arrow for the "WF |" sections.
+
+  @param {string} [label] - Button text. Nothing is rendered when blank
+  @param {string} [url] - Link
+  @param {string} [style] - solid or outline. Defaults to solid
+  @param {boolean} [new_tab] - Open in a new tab
+  @param {string} [class] - Extra class
+
+  @example
+  {% render 'wf-button', label: s.button_label, url: s.button_url %}
+{%- enddoc -%}
+{%- if label != blank -%}
+  <a
+    class="wf-btn wf-btn--{{ style | default: 'solid' }} {{ class }}"
+    {% if url != blank %}
+      href="{{ url }}"
+    {% else %}
+      role="link" aria-disabled="true"
+    {% endif %}
+    {% if new_tab %}
+      target="_blank" rel="noopener"
+    {% endif %}
+  >
+    <span>{{ label | escape }}</span>
+    {%- render 'wf-icon', name: 'arrow' -%}
+    {%- if new_tab -%}
+      <span class="visually-hidden">(opens in a new tab)</span>
+    {%- endif -%}
+  </a>
+{%- endif -%}

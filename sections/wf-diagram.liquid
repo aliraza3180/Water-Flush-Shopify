@@ -1,0 +1,312 @@
+{%- liquid
+  assign s = section.settings
+  assign half = section.blocks.size | plus: 1 | divided_by: 2
+-%}
+<div
+  id="WfDiagram-{{ section.id }}"
+  class="wf wf-diagram wf--{{ s.tone }}"
+  style="--wf-pt: {{ s.padding_top }}px; --wf-pb: {{ s.padding_bottom }}px;"
+>
+  {%- render 'wf-decor', left: s.decor_left, right: s.decor_right, width: s.decor_width, position: s.decor_position -%}
+  <div class="wf-container wf-diagram__inner">
+    <div class="wf-diagram__content">
+      {%- render 'wf-heading', eyebrow: s.eyebrow, heading: s.heading, accent: s.heading_accent, heading_end: s.heading_end, text: s.text, tag: s.heading_tag, size: 'lg' -%}
+    </div>
+    <div class="wf-diagram__figure">
+      <ul class="wf-diagram__col wf-diagram__col--left" role="list">
+        {%- for block in section.blocks limit: half -%}
+          <li class="wf-callout" {{ block.shopify_attributes }}>
+            <span class="wf-chip wf-chip--outline">{%- render 'wf-icon', name: block.settings.icon -%}</span>
+            <h3 class="wf-callout__title">{{ block.settings.title | escape }}</h3>
+            <p class="wf-callout__text">{{ block.settings.text | escape }}</p>
+          </li>
+        {%- endfor -%}
+      </ul>
+      <div class="wf-diagram__image">
+        {%- render 'wf-image', image: s.image, alt: s.image_alt, sizes: '(min-width: 990px) 25vw, 60vw', class: 'wf-diagram__img', label: 'Diagram image, 1200 x 1200 px' -%}
+      </div>
+      <ul class="wf-diagram__col wf-diagram__col--right" role="list">
+        {%- for block in section.blocks offset: half -%}
+          <li class="wf-callout" {{ block.shopify_attributes }}>
+            <span class="wf-chip wf-chip--outline">{%- render 'wf-icon', name: block.settings.icon -%}</span>
+            <h3 class="wf-callout__title">{{ block.settings.title | escape }}</h3>
+            <p class="wf-callout__text">{{ block.settings.text | escape }}</p>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "WF | Diagram",
+  "class": "wf-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Centre image",
+      "info": "1200 x 1200 px. Shown as a circle."
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image description (alt text)"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Press Enter to start a new line."
+    },
+    {
+      "type": "textarea",
+      "id": "heading_accent",
+      "label": "Heading, teal line",
+      "info": "Shown in teal on its own line."
+    },
+    {
+      "type": "textarea",
+      "id": "heading_end",
+      "label": "Heading, line after the teal one"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1 (page title)"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h2",
+      "info": "Use H1 once per page, in the first section."
+    },
+    {
+      "type": "select",
+      "id": "tone",
+      "label": "Background",
+      "options": [
+        {
+          "value": "white",
+          "label": "White"
+        },
+        {
+          "value": "tint",
+          "label": "Soft aqua tint"
+        },
+        {
+          "value": "aqua",
+          "label": "Pale aqua band"
+        }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "header",
+      "content": "Corner decoration",
+      "info": "Leaves or water splash. Shown on desktop only."
+    },
+    {
+      "type": "image_picker",
+      "id": "decor_left",
+      "label": "Left decoration"
+    },
+    {
+      "type": "image_picker",
+      "id": "decor_right",
+      "label": "Right decoration"
+    },
+    {
+      "type": "range",
+      "id": "decor_width",
+      "label": "Decoration width",
+      "min": 120,
+      "max": 480,
+      "step": 20,
+      "unit": "px",
+      "default": 240
+    },
+    {
+      "type": "select",
+      "id": "decor_position",
+      "label": "Decoration position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "callout",
+      "name": "Callout",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "drop",
+              "label": "Drop"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "lotus",
+              "label": "Lotus"
+            },
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "bolt",
+              "label": "Bolt"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "cycle",
+              "label": "Cycle"
+            },
+            {
+              "value": "flask",
+              "label": "Flask"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "check-circle",
+              "label": "Check circle"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "card",
+              "label": "Card"
+            },
+            {
+              "value": "capsule",
+              "label": "Capsule"
+            },
+            {
+              "value": "mail",
+              "label": "Mail"
+            }
+          ],
+          "default": "drop"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Fluid Regulation"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WF | Diagram",
+      "category": "Water Flush"
+    }
+  ]
+}
+{% endschema %}

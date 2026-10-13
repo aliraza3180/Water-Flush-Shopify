@@ -1,0 +1,397 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */{
+  "sections": {
+    "hero": {
+      "type": "wf-hero",
+      "blocks": {
+        "benefit_001": {
+          "type": "benefit",
+          "settings": {
+            "icon": "drop",
+            "text": "Helps Reduce Temporary Water Retention*"
+          }
+        },
+        "benefit_002": {
+          "type": "benefit",
+          "settings": {
+            "icon": "leaf",
+            "text": "Supports a Flatter, More Comfortable Feeling*"
+          }
+        },
+        "benefit_003": {
+          "type": "benefit",
+          "settings": {
+            "icon": "lotus",
+            "text": "Promotes Daily Detox Support*"
+          }
+        },
+        "benefit_004": {
+          "type": "benefit",
+          "settings": {
+            "icon": "body",
+            "text": "Supports Your Active Lifestyle*"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_001",
+        "benefit_002",
+        "benefit_003",
+        "benefit_004"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/wf-home-hero.jpg",
+        "image_mobile": "shopify://shop_images/wf-home-hero-mobile.jpg",
+        "fade": 90,
+        "height": "large",
+        "tone": "white",
+        "heading_tag": "h2",
+        "heading_size": "xl",
+        "button_label": "Shop Now",
+        "button_url": "shopify://pages/shop",
+        "image_alt": "Smiling woman by the sea beside the 60 and 120 capsule bottles of Brand Name Water Flush",
+        "eyebrow": "Natural Fluid Balance Support",
+        "heading": "Feel Lighter.\nLess Bloat.",
+        "heading_accent": "More You.",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush helps support your natural fluid balance so you can feel less bloated, more comfortable, and more confident—every day.*</p>"
+      }
+    },
+    "sizes": {
+      "type": "wf-size-selector",
+      "blocks": {
+        "option_005": {
+          "type": "option",
+          "settings": {
+            "variant_position": 1,
+            "title": "",
+            "text": "Perfect for getting started or for travel.",
+            "badge": "",
+            "checks": "",
+            "image_alt": "Brand Name Water Flush, 60 capsule bottle"
+          }
+        },
+        "option_006": {
+          "type": "option",
+          "settings": {
+            "variant_position": 2,
+            "title": "",
+            "text": "Our best value for ongoing daily support.",
+            "badge": "Best Value",
+            "checks": "",
+            "image_alt": "Brand Name Water Flush, 120 capsule bottle"
+          }
+        },
+        "assurance_007": {
+          "type": "assurance",
+          "settings": {
+            "icon": "truck",
+            "text": "Free U.S. Shipping",
+            "link": "shopify://pages/shipping-policy"
+          }
+        },
+        "assurance_008": {
+          "type": "assurance",
+          "settings": {
+            "icon": "shield",
+            "text": "30-Day Satisfaction Guarantee",
+            "link": "shopify://pages/satisfaction-guarantee"
+          }
+        },
+        "assurance_009": {
+          "type": "assurance",
+          "settings": {
+            "icon": "card",
+            "text": "Secure Checkout"
+          }
+        }
+      },
+      "block_order": [
+        "option_005",
+        "option_006",
+        "assurance_007",
+        "assurance_008",
+        "assurance_009"
+      ],
+      "settings": {
+        "product": "brand-name-water-flush",
+        "layout": "side",
+        "heading_tag": "h2",
+        "button_mode": "cart",
+        "button_label": "Add to Cart",
+        "button_url": "shopify://pages/shop",
+        "show_quantity": false,
+        "details_label": "",
+        "price_pending_text": "$XX.XX",
+        "anchor": "",
+        "background": "shopify://shop_images/wf-water-band.jpg",
+        "tone": "tint",
+        "padding_top": 72,
+        "padding_bottom": 80,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "eyebrow": "Choose Your Size",
+        "heading": "Find the Right Fit\nfor Your Lifestyle.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush is available in two convenient sizes so you can choose what works best for you.</p>"
+      }
+    },
+    "trust": {
+      "type": "wf-trust-bar",
+      "blocks": {
+        "item_00a": {
+          "type": "item",
+          "settings": {
+            "icon": "award",
+            "text": "GMP Certified\nFacility"
+          }
+        },
+        "item_00b": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "text": "3rd Party\nLab Tested"
+          }
+        },
+        "item_00c": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "text": "Free U.S.\nShipping",
+            "link": "shopify://pages/shipping-policy"
+          }
+        },
+        "item_00d": {
+          "type": "item",
+          "settings": {
+            "icon": "cycle",
+            "text": "30-Day Satisfaction\nGuarantee",
+            "link": "shopify://pages/satisfaction-guarantee"
+          }
+        },
+        "item_00e": {
+          "type": "item",
+          "settings": {
+            "icon": "star",
+            "text": "Quality\nYou Can Trust"
+          }
+        }
+      },
+      "block_order": [
+        "item_00a",
+        "item_00b",
+        "item_00c",
+        "item_00d",
+        "item_00e"
+      ],
+      "settings": {
+        "label": "Product highlights",
+        "heading": "",
+        "style": "chips",
+        "tone": "aqua",
+        "padding_top": 32,
+        "padding_bottom": 36,
+        "decor_width": 180,
+        "decor_position": "bottom",
+        "decor_right": "shopify://shop_images/wf-decor-leaves-right.png"
+      }
+    },
+    "balance": {
+      "type": "wf-image-text",
+      "settings": {
+        "layout": "overlay",
+        "media_side": "right",
+        "media_shape": "rect",
+        "image": "shopify://shop_images/wf-home-balance.jpg",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": false,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "image_alt": "Woman in a teal sports top stretching her arms above her head by the sea",
+        "eyebrow": "Support Your Wellness Routine",
+        "heading": "Stay Balanced.\nFeel Your Best.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Whether you’re at home, at work, or on the go, Brand Name Water Flush helps you maintain healthy fluid balance so you can feel lighter, more comfortable, and ready for whatever the day brings.*</p>",
+        "button_label": "Learn More About the Benefits",
+        "button_url": "shopify://pages/benefits",
+        "script_text": "Less Bloat\nMore Energy\nA More Confident You"
+      }
+    },
+    "ingredients": {
+      "type": "wf-ingredients",
+      "blocks": {
+        "ingredient_00f": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-cranberry.jpg",
+            "image_alt": "Fresh cranberries",
+            "name": "Cranberry",
+            "badges": "",
+            "text": ""
+          }
+        },
+        "ingredient_00g": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-dandelion.jpg",
+            "image_alt": "Dandelion flower with leaves",
+            "name": "Dandelion",
+            "badges": "",
+            "text": ""
+          }
+        },
+        "ingredient_00h": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-green-tea.jpg",
+            "image_alt": "Fresh green tea leaves",
+            "name": "Green Tea",
+            "badges": "",
+            "text": ""
+          }
+        },
+        "ingredient_00i": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-juniper.jpg",
+            "image_alt": "Juniper berries on a sprig",
+            "name": "Juniper Berry",
+            "badges": "",
+            "text": ""
+          }
+        },
+        "ingredient_00j": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-corn-silk.jpg",
+            "image_alt": "Golden corn silk",
+            "name": "Corn Silk",
+            "badges": "",
+            "text": ""
+          }
+        },
+        "ingredient_00k": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-paprika.jpg",
+            "image_alt": "Red paprika peppers",
+            "name": "Paprika",
+            "badges": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_00f",
+        "ingredient_00g",
+        "ingredient_00h",
+        "ingredient_00i",
+        "ingredient_00j",
+        "ingredient_00k"
+      ],
+      "settings": {
+        "style": "cutouts",
+        "columns": 6,
+        "eyebrow": "Natural Ingredients. Targeted Support.",
+        "heading": "A Potent Blend of Nature’s Best.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush features a carefully selected blend of vitamins, minerals, and traditional botanicals to support your natural fluid balance and daily wellness.*</p>",
+        "heading_tag": "h2",
+        "button_label": "See All Ingredients",
+        "button_url": "shopify://pages/ingredients",
+        "tone": "white",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "decor_width": 220,
+        "decor_position": "top",
+        "decor_left": "shopify://shop_images/wf-decor-leaves-left.png",
+        "decor_right": "shopify://shop_images/wf-decor-leaves-right.png"
+      }
+    },
+    "trusted": {
+      "type": "wf-image-text",
+      "blocks": {
+        "chip_00l": {
+          "type": "chip",
+          "settings": {
+            "icon": "shield",
+            "text": "High-Quality\nIngredients"
+          }
+        },
+        "chip_00m": {
+          "type": "chip",
+          "settings": {
+            "icon": "flask",
+            "text": "3rd Party\nLab Tested"
+          }
+        },
+        "chip_00n": {
+          "type": "chip",
+          "settings": {
+            "icon": "award",
+            "text": "GMP Certified\nFacility"
+          }
+        },
+        "chip_00o": {
+          "type": "chip",
+          "settings": {
+            "icon": "star",
+            "text": "Quality\nYou Can Trust"
+          }
+        }
+      },
+      "block_order": [
+        "chip_00l",
+        "chip_00m",
+        "chip_00n",
+        "chip_00o"
+      ],
+      "settings": {
+        "layout": "overlay",
+        "media_side": "left",
+        "media_shape": "rect",
+        "image": "shopify://shop_images/wf-home-trust.jpg",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": false,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "image_alt": "Woman in a white shirt sitting on rocks by the sea",
+        "eyebrow": "More Than a Supplement",
+        "heading": "A Brand You Can Trust.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Brand Name products are manufactured in the USA with high-quality ingredients and tested for purity and potency, so you can feel confident in what you’re putting in your body.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "sizes",
+    "trust",
+    "balance",
+    "ingredients",
+    "trusted"
+  ]
+}

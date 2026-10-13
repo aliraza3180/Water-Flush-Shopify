@@ -1,0 +1,334 @@
+{
+  "sections": {
+    "hero": {
+      "type": "wf-hero",
+      "settings": {
+        "image": "shopify://shop_images/wf-benefits-hero.jpg",
+        "image_mobile": "shopify://shop_images/wf-benefits-hero-mobile.jpg",
+        "fade": 90,
+        "height": "large",
+        "tone": "white",
+        "heading_tag": "h1",
+        "heading_size": "xl",
+        "button_label": "Shop Now",
+        "button_url": "shopify://pages/shop",
+        "image_alt": "Woman smiling in the sun by the sea beside the two bottles of Brand Name Water Flush",
+        "eyebrow": "Benefits",
+        "heading": "Natural Support\nfor a Lighter,",
+        "heading_accent": "More Comfortable\nYou.",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush helps support your body’s natural fluid balance so you can feel less bloated, more comfortable, and ready for whatever the day brings.*</p>"
+      }
+    },
+    "benefits": {
+      "type": "wf-trust-bar",
+      "blocks": {
+        "item_001": {
+          "type": "item",
+          "settings": {
+            "icon": "drop",
+            "text": "Supports\nHealthy Fluid\nBalance*"
+          }
+        },
+        "item_002": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "text": "Helps Reduce\nTemporary\nWater Retention*"
+          }
+        },
+        "item_003": {
+          "type": "item",
+          "settings": {
+            "icon": "body",
+            "text": "Supports\na Flatter, More\nComfortable Feeling*"
+          }
+        },
+        "item_004": {
+          "type": "item",
+          "settings": {
+            "icon": "lotus",
+            "text": "Promotes\nDaily\nDetox Support*"
+          }
+        },
+        "item_005": {
+          "type": "item",
+          "settings": {
+            "icon": "bolt",
+            "text": "Helps You Feel\nLighter & More\nEnergized*"
+          }
+        },
+        "item_006": {
+          "type": "item",
+          "settings": {
+            "icon": "heart",
+            "text": "Fits Easily Into\nYour Daily\nRoutine*"
+          }
+        }
+      },
+      "block_order": [
+        "item_001",
+        "item_002",
+        "item_003",
+        "item_004",
+        "item_005",
+        "item_006"
+      ],
+      "settings": {
+        "label": "Benefits",
+        "heading": "",
+        "style": "chips",
+        "tone": "white",
+        "padding_top": 32,
+        "padding_bottom": 36,
+        "decor_width": 240,
+        "decor_position": "bottom"
+      }
+    },
+    "difference": {
+      "type": "wf-image-text",
+      "blocks": {
+        "iconrow_007": {
+          "type": "icon_row",
+          "settings": {
+            "icon": "drop",
+            "title": "Supports Healthy Fluid Balance",
+            "text": "Helps your body maintain normal fluid levels.*"
+          }
+        },
+        "iconrow_008": {
+          "type": "icon_row",
+          "settings": {
+            "icon": "leaf",
+            "title": "Helps Reduce Temporary Water Retention",
+            "text": "Supports a less bloated, more comfortable feeling.*"
+          }
+        },
+        "iconrow_009": {
+          "type": "icon_row",
+          "settings": {
+            "icon": "body",
+            "title": "Promotes a Flatter, More Comfortable Look",
+            "text": "Helps you feel your best in your clothes.*"
+          }
+        },
+        "iconrow_00a": {
+          "type": "icon_row",
+          "settings": {
+            "icon": "bolt",
+            "title": "Helps You Feel Lighter & More Energized",
+            "text": "Supports your active lifestyle.*"
+          }
+        },
+        "iconrow_00b": {
+          "type": "icon_row",
+          "settings": {
+            "icon": "heart",
+            "title": "Easy to Add to Your Routine",
+            "text": "Convenient capsules for daily support.*"
+          }
+        }
+      },
+      "block_order": [
+        "iconrow_007",
+        "iconrow_008",
+        "iconrow_009",
+        "iconrow_00a",
+        "iconrow_00b"
+      ],
+      "settings": {
+        "layout": "split",
+        "media_side": "left",
+        "media_shape": "rect",
+        "image": "shopify://shop_images/wf-benefits-difference.jpg",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": false,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "image_alt": "Woman in a teal sports top sitting cross-legged on a rock by the sea",
+        "eyebrow": "Key Benefits",
+        "heading": "Feel the Difference",
+        "heading_accent": "Every Day.",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush is designed to support your body’s natural processes so you can feel lighter, more comfortable, and more confident.</p>"
+      }
+    },
+    "moments": {
+      "type": "wf-feature-grid",
+      "blocks": {
+        "card_00c": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/wf-moment-vacations.jpg",
+            "image_alt": "Woman in a white cover-up walking on the beach",
+            "title": "Vacations",
+            "text": "<p>Feel your best on the go.</p>"
+          }
+        },
+        "card_00d": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/wf-moment-work.jpg",
+            "image_alt": "Woman working at a laptop in a bright office",
+            "title": "Work",
+            "text": "<p>Stay comfortable all day.</p>"
+          }
+        },
+        "card_00e": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/wf-moment-active.jpg",
+            "image_alt": "Woman in sportswear outdoors after a workout",
+            "title": "Active Lifestyle",
+            "text": "<p>Feel lighter and more energized.*</p>"
+          }
+        },
+        "card_00f": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/wf-moment-everyday.jpg",
+            "image_alt": "Woman smiling over a fresh salad at home",
+            "title": "Everyday Life",
+            "text": "<p>Support your natural balance.*</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_00c",
+        "card_00d",
+        "card_00e",
+        "card_00f"
+      ],
+      "settings": {
+        "heading_position": "side",
+        "card_style": "photo",
+        "eyebrow": "Real Benefits for Real Life",
+        "heading": "Support for\nEveryday Moments.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Whether you’re at home, at work, traveling, or enjoying time with friends, Brand Name Water Flush helps you feel lighter, more comfortable, and ready for what’s next.*</p>",
+        "heading_tag": "h2",
+        "button_label": "Shop Now",
+        "button_url": "shopify://pages/shop",
+        "tone": "aqua",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "decor_width": 240,
+        "decor_position": "bottom"
+      }
+    },
+    "holistic": {
+      "type": "wf-image-text",
+      "blocks": {
+        "check_00g": {
+          "type": "check",
+          "settings": {
+            "title": "",
+            "text": "Helps Reduce Temporary Water Retention*"
+          }
+        },
+        "check_00h": {
+          "type": "check",
+          "settings": {
+            "title": "",
+            "text": "Supports Natural Detoxification Processes*"
+          }
+        },
+        "check_00i": {
+          "type": "check",
+          "settings": {
+            "title": "",
+            "text": "Promotes a Lighter, More Comfortable Feeling*"
+          }
+        },
+        "check_00j": {
+          "type": "check",
+          "settings": {
+            "title": "",
+            "text": "Complements a Healthy Diet and Active Lifestyle*"
+          }
+        },
+        "check_00k": {
+          "type": "check",
+          "settings": {
+            "title": "",
+            "text": "Gentle, Non-Habit Forming Formula*"
+          }
+        }
+      },
+      "block_order": [
+        "check_00g",
+        "check_00h",
+        "check_00i",
+        "check_00j",
+        "check_00k"
+      ],
+      "settings": {
+        "layout": "columns",
+        "media_side": "right",
+        "media_shape": "round",
+        "image": "shopify://shop_images/wf-benefits-stones.jpg",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": false,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "image_alt": "Stacked smooth stones with green leaves by the water",
+        "eyebrow": "A Holistic Approach",
+        "heading": "More Than Just\nWater Balance.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Temporary water retention can make you feel bloated, uncomfortable, and sluggish. Brand Name Water Flush helps support your body’s natural fluid balance as part of a healthy diet and active lifestyle.*</p>",
+        "button_label": "Learn About the Science",
+        "button_url": "shopify://pages/science"
+      }
+    },
+    "better": {
+      "type": "wf-image-text",
+      "settings": {
+        "layout": "overlay",
+        "media_side": "left",
+        "media_shape": "rect",
+        "image": "shopify://shop_images/wf-benefits-better.jpg",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": false,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "image_alt": "Woman in a white cover-up sitting on coastal rocks at sunset",
+        "eyebrow": "Feel Confident. Feel Your Best.",
+        "heading": "A Better You\nStarts Here.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Join thousands who make Brand Name Water Flush part of their daily wellness routine and feel the difference for themselves.</p>",
+        "button_label": "Shop Now",
+        "button_url": "shopify://pages/shop",
+        "decor_right": "shopify://shop_images/wf-decor-leaves-right.png"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "benefits",
+    "difference",
+    "moments",
+    "holistic",
+    "better"
+  ]
+}

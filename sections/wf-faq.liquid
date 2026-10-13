@@ -1,0 +1,325 @@
+{%- liquid
+  assign s = section.settings
+  assign questions = section.blocks | where: 'type', 'question'
+  assign number = 0
+-%}
+<div
+  id="WfFaq-{{ section.id }}"
+  class="wf wf-faq wf--{{ s.tone }} wf-faq--cols-{{ s.columns }}"
+  style="--wf-pt: {{ s.padding_top }}px; --wf-pb: {{ s.padding_bottom }}px;"
+>
+  {%- render 'wf-decor', left: s.decor_left, right: s.decor_right, width: s.decor_width, position: s.decor_position -%}
+  <div class="wf-container">
+    {%- if s.heading != blank or s.eyebrow != blank -%}
+      {%- render 'wf-heading', eyebrow: s.eyebrow, heading: s.heading, accent: s.heading_accent, text: s.text, tag: s.heading_tag, size: 'md', class: 'wf-head--center' -%}
+    {%- endif -%}
+    <div class="wf-faq__cols">
+      {%- comment -%} First column: the first group. Its first question sits open inside the group row, the rest are numbered rows. {%- endcomment -%}
+      <div class="wf-faq__col">
+        {%- liquid
+          assign cat_index = 0
+          assign lead_title = ''
+          assign lead_attributes = ''
+          assign lead_done = false
+        -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'category' -%}
+            {%- assign cat_index = cat_index | plus: 1 -%}
+            {%- if cat_index > 1 -%}
+              {%- break -%}
+            {%- endif -%}
+            {%- liquid
+              assign number = number | plus: 1
+              assign lead_title = block.settings.title
+              assign lead_attributes = block.shopify_attributes
+            -%}
+          {%- elsif block.type == 'question' -%}
+            {%- if lead_title != blank and lead_done == false -%}
+              {%- assign lead_done = true -%}
+              {%- capture body -%}
+                <div class="wf-faq__qa" {{ block.shopify_attributes }}>
+                  <h3 class="wf-faq__q">{{ block.settings.question | escape }}</h3>
+                  <div class="wf-faq__a rte">{{ block.settings.answer }}</div>
+                </div>
+              {%- endcapture -%}
+              {%- render 'wf-faq-row', number: number, title: lead_title, body: body, lead: true, open: true, level: 2, attributes: lead_attributes -%}
+            {%- else -%}
+              {%- assign number = number | plus: 1 -%}
+              {%- capture body -%}
+                <div class="wf-faq__a rte">{{ block.settings.answer }}</div>
+              {%- endcapture -%}
+              {%- render 'wf-faq-row', number: number, title: block.settings.question, body: body, attributes: block.shopify_attributes -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- comment -%} Second column: every later group is one row that opens to show its questions. {%- endcomment -%}
+      <div class="wf-faq__col">
+        {%- liquid
+          assign cat_index = 0
+          assign group_title = ''
+          assign group_body = ''
+          assign group_attributes = ''
+        -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'category' -%}
+            {%- assign cat_index = cat_index | plus: 1 -%}
+            {%- if cat_index == 1 -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- if group_title != blank -%}
+              {%- assign number = number | plus: 1 -%}
+              {%- render 'wf-faq-row', number: number, title: group_title, body: group_body, level: 2, attributes: group_attributes -%}
+            {%- endif -%}
+            {%- liquid
+              assign group_title = block.settings.title
+              assign group_attributes = block.shopify_attributes
+              assign group_body = ''
+            -%}
+          {%- elsif block.type == 'question' and cat_index > 1 -%}
+            {%- capture group_body -%}
+              {{- group_body -}}
+              <div class="wf-faq__qa" {{ block.shopify_attributes }}>
+                <h3 class="wf-faq__q">{{ block.settings.question | escape }}</h3>
+                <div class="wf-faq__a rte">{{ block.settings.answer }}</div>
+              </div>
+            {%- endcapture -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- if group_title != blank -%}
+          {%- assign number = number | plus: 1 -%}
+          {%- render 'wf-faq-row', number: number, title: group_title, body: group_body, level: 2, attributes: group_attributes -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+{%- if s.structured_data and questions.size > 0 -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- for block in questions -%}
+          {
+            "@type": "Question",
+            "name": {{ block.settings.question | json }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | strip_html | json }} }
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "WF | FAQ",
+  "class": "wf-section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Add a \"Group\" block, then the \"Question\" blocks that belong to it. The first group shows its questions as numbered rows; every later group is one row that opens to show its questions."
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small line above the heading"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "heading_accent",
+      "label": "Heading, teal line"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1 (page title)"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns on desktop",
+      "options": [
+        {
+          "value": "2",
+          "label": "Two"
+        },
+        {
+          "value": "1",
+          "label": "One"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "checkbox",
+      "id": "structured_data",
+      "label": "Add FAQ data for search engines",
+      "default": true,
+      "info": "Switch on for one FAQ section per page only."
+    },
+    {
+      "type": "select",
+      "id": "tone",
+      "label": "Background",
+      "options": [
+        {
+          "value": "white",
+          "label": "White"
+        },
+        {
+          "value": "tint",
+          "label": "Soft aqua tint"
+        },
+        {
+          "value": "aqua",
+          "label": "Pale aqua band"
+        }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "header",
+      "content": "Corner decoration",
+      "info": "Leaves or water splash. Shown on desktop only."
+    },
+    {
+      "type": "image_picker",
+      "id": "decor_left",
+      "label": "Left decoration"
+    },
+    {
+      "type": "image_picker",
+      "id": "decor_right",
+      "label": "Right decoration"
+    },
+    {
+      "type": "range",
+      "id": "decor_width",
+      "label": "Decoration width",
+      "min": 120,
+      "max": 480,
+      "step": 20,
+      "unit": "px",
+      "default": 240
+    },
+    {
+      "type": "select",
+      "id": "decor_position",
+      "label": "Decoration position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Group",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "General Questions"
+        }
+      ]
+    },
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "WF | FAQ",
+      "category": "Water Flush"
+    }
+  ]
+}
+{% endschema %}

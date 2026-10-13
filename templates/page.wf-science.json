@@ -1,0 +1,318 @@
+{
+  "sections": {
+    "hero": {
+      "type": "wf-hero",
+      "settings": {
+        "image": "shopify://shop_images/wf-science-hero.jpg",
+        "image_mobile": "shopify://shop_images/wf-science-hero-mobile.jpg",
+        "fade": 90,
+        "height": "large",
+        "tone": "white",
+        "heading_tag": "h1",
+        "heading_size": "xl",
+        "button_label": "Shop Now",
+        "button_url": "shopify://pages/shop",
+        "image_alt": "Woman with her face lifted to the sun by the sea beside the two bottles of Brand Name Water Flush",
+        "eyebrow": "The Science Behind the Support",
+        "heading": "How It Helps\nYour Body Stay",
+        "heading_accent": "in Balance.",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush features a unique blend of vitamins, minerals, and traditional botanicals designed to help support your body’s natural fluid balance, so you can feel lighter, more comfortable, and ready for whatever the day brings.*</p>"
+      }
+    },
+    "benefits": {
+      "type": "wf-trust-bar",
+      "blocks": {
+        "item_001": {
+          "type": "item",
+          "settings": {
+            "icon": "drop",
+            "text": "Supports\nNatural Fluid\nBalance*"
+          }
+        },
+        "item_002": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "text": "Helps Reduce\nTemporary\nWater Retention*"
+          }
+        },
+        "item_003": {
+          "type": "item",
+          "settings": {
+            "icon": "lotus",
+            "text": "Supports\nDigestive\nWellness*"
+          }
+        },
+        "item_004": {
+          "type": "item",
+          "settings": {
+            "icon": "bolt",
+            "text": "Helps You Feel\nLighter & More\nComfortable*"
+          }
+        },
+        "item_005": {
+          "type": "item",
+          "settings": {
+            "icon": "heart",
+            "text": "Supports\nYour Active\nLifestyle*"
+          }
+        },
+        "item_006": {
+          "type": "item",
+          "settings": {
+            "icon": "cycle",
+            "text": "A Simple Addition\nto Your Daily\nRoutine*"
+          }
+        }
+      },
+      "block_order": [
+        "item_001",
+        "item_002",
+        "item_003",
+        "item_004",
+        "item_005",
+        "item_006"
+      ],
+      "settings": {
+        "label": "Benefits",
+        "heading": "",
+        "style": "chips",
+        "tone": "tint",
+        "padding_top": 32,
+        "padding_bottom": 36,
+        "decor_width": 240,
+        "decor_position": "bottom"
+      }
+    },
+    "balance": {
+      "type": "wf-diagram",
+      "blocks": {
+        "callout_007": {
+          "type": "callout",
+          "settings": {
+            "icon": "drop",
+            "title": "Fluid Regulation",
+            "text": "Your body balances fluids through a complex system of organs and electrolytes."
+          }
+        },
+        "callout_008": {
+          "type": "callout",
+          "settings": {
+            "icon": "leaf",
+            "title": "Natural Support",
+            "text": "Certain vitamins, minerals, and botanicals can help support this natural process.*"
+          }
+        },
+        "callout_009": {
+          "type": "callout",
+          "settings": {
+            "icon": "heart",
+            "title": "Everyday Balance",
+            "text": "Diet, activity, and daily habits all play a part in how your body manages fluids."
+          }
+        },
+        "callout_00a": {
+          "type": "callout",
+          "settings": {
+            "icon": "cycle",
+            "title": "Electrolytes",
+            "text": "Minerals like potassium and chloride help maintain proper fluid balance in the body.*"
+          }
+        }
+      },
+      "block_order": [
+        "callout_007",
+        "callout_008",
+        "callout_009",
+        "callout_00a"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/wf-science-figure.jpg",
+        "image_alt": "Illustration of a woman’s figure made of clear blue water inside a water bubble with green leaves",
+        "eyebrow": "Your Body’s Natural System",
+        "heading": "Understanding\nFluid Balance.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Your body constantly works to maintain the right balance of fluids and electrolytes. Factors like diet, activity level, travel, hormonal changes, and environmental conditions can sometimes lead to temporary water retention, leaving you feeling bloated, sluggish, or uncomfortable.</p>",
+        "heading_tag": "h2",
+        "tone": "white",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "decor_width": 220,
+        "decor_position": "bottom",
+        "decor_left": "shopify://shop_images/wf-decor-leaves-left.png"
+      }
+    },
+    "blend": {
+      "type": "wf-feature-grid",
+      "blocks": {
+        "card_00b": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/wf-science-botanicals.jpg",
+            "image_alt": "Fresh green herbs in a white bowl",
+            "title": "Traditional Botanicals",
+            "text": "<p>Time-honored herbs like dandelion, green tea, juniper berry, and corn silk have long been used to support healthy fluid balance and overall wellness.*</p>"
+          }
+        },
+        "card_00c": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/wf-science-nutrients.jpg",
+            "image_alt": "Clear blue molecule model",
+            "title": "Essential Nutrients",
+            "text": "<p>Vitamin B6, potassium, and chloride help support normal fluid balance and electrolyte balance in the body.*</p>"
+          }
+        },
+        "card_00d": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/wf-science-support.jpg",
+            "image_alt": "Fresh cranberries with green leaves",
+            "title": "Additional Support",
+            "text": "<p>Cranberry, watermelon, apple cider vinegar, and buchu leaf complement the formula with naturally occurring plant compounds.</p>"
+          }
+        },
+        "card_00e": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/wf-science-wellness.jpg",
+            "image_alt": "A water drop falling into still blue water",
+            "title": "Whole-Body Wellness",
+            "text": "<p>This unique combination is designed to help you feel lighter, more comfortable, and ready for what the day brings.*</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_00b",
+        "card_00c",
+        "card_00d",
+        "card_00e"
+      ],
+      "settings": {
+        "heading_position": "top",
+        "card_style": "image",
+        "eyebrow": "Targeted Support",
+        "heading": "A Synergistic Blend\nof Nutrients and Botanicals.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush combines key vitamins, minerals, and time-honored botanicals to help support your body’s natural fluid balance and overall wellness.*</p>",
+        "heading_tag": "h2",
+        "button_label": "",
+        "tone": "tint",
+        "padding_top": 56,
+        "padding_bottom": 64,
+        "decor_width": 220,
+        "decor_position": "top",
+        "decor_right": "shopify://shop_images/wf-decor-leaves-right.png"
+      }
+    },
+    "research": {
+      "type": "wf-image-text",
+      "blocks": {
+        "check_00f": {
+          "type": "check",
+          "settings": {
+            "title": "Dandelion",
+            "text": "Traditionally used to support fluid balance and urinary tract health.*"
+          }
+        },
+        "check_00g": {
+          "type": "check",
+          "settings": {
+            "title": "Green Tea",
+            "text": "Contains natural antioxidants that support overall wellness.*"
+          }
+        },
+        "check_00h": {
+          "type": "check",
+          "settings": {
+            "title": "Juniper Berry",
+            "text": "Traditionally used to support healthy urinary tract function.*"
+          }
+        },
+        "check_00i": {
+          "type": "check",
+          "settings": {
+            "title": "Corn Silk",
+            "text": "Traditionally used to support fluid balance and urinary tract health.*"
+          }
+        },
+        "check_00j": {
+          "type": "check",
+          "settings": {
+            "title": "Vitamin B6, Potassium & Chloride",
+            "text": "Help maintain normal fluid and electrolyte balance in the body.*"
+          }
+        }
+      },
+      "block_order": [
+        "check_00f",
+        "check_00g",
+        "check_00h",
+        "check_00i",
+        "check_00j"
+      ],
+      "settings": {
+        "layout": "columns",
+        "media_side": "right",
+        "media_shape": "rect",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": false,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "decor_width": 280,
+        "decor_position": "bottom",
+        "eyebrow": "What Research Tells Us",
+        "heading": "The Science\nSupports the Ingredients.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Many of the ingredients in Brand Name Water Flush have been studied for their role in supporting normal fluid balance, urinary tract health, and overall wellness. While individual results may vary, the available research suggests these traditional botanicals and nutrients can be a valuable part of a healthy lifestyle.*</p>",
+        "button_label": "Learn More About the Research",
+        "button_url": "shopify://pages/ingredients",
+        "decor_right": "shopify://shop_images/wf-decor-splash.png"
+      }
+    },
+    "healthier": {
+      "type": "wf-image-text",
+      "settings": {
+        "layout": "overlay",
+        "media_side": "left",
+        "media_shape": "rect",
+        "image": "shopify://shop_images/wf-science-healthier.jpg",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": false,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "image_alt": "Woman seen from behind sitting cross-legged on a rock, looking out over the sea",
+        "eyebrow": "Real Ingredients. Real Support.",
+        "heading": "A Healthier You\nEvery Day.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush brings together the power of nature and essential nutrients to help support your body’s natural fluid balance, so you can feel more comfortable, more confident, and ready for whatever the day brings.*</p>",
+        "button_label": "Shop Now",
+        "button_url": "shopify://pages/shop",
+        "decor_right": "shopify://shop_images/wf-decor-leaves-right.png"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "benefits",
+    "balance",
+    "blend",
+    "research",
+    "healthier"
+  ]
+}

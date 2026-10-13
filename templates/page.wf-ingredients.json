@@ -1,0 +1,353 @@
+{
+  "sections": {
+    "hero": {
+      "type": "wf-hero",
+      "settings": {
+        "image": "shopify://shop_images/wf-ingredients-hero.jpg",
+        "image_mobile": "shopify://shop_images/wf-ingredients-hero-mobile.jpg",
+        "fade": 90,
+        "height": "large",
+        "tone": "white",
+        "heading_tag": "h1",
+        "heading_size": "xl",
+        "button_label": "Shop Now",
+        "button_url": "shopify://pages/shop",
+        "image_alt": "The two bottles of Brand Name Water Flush on a wet stone in front of a waterfall and green leaves",
+        "eyebrow": "Ingredients",
+        "heading": "Nature’s Best\nfor Natural",
+        "heading_accent": "Fluid Balance.",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush features a carefully selected blend of vitamins, minerals and traditional botanicals to support your body’s natural fluid balance and help you feel lighter and more comfortable every day.*</p>"
+      }
+    },
+    "highlights": {
+      "type": "wf-trust-bar",
+      "blocks": {
+        "item_001": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "text": "Natural\nBotanical Blend"
+          }
+        },
+        "item_002": {
+          "type": "item",
+          "settings": {
+            "icon": "flask",
+            "text": "Vitamins &\nMinerals"
+          }
+        },
+        "item_003": {
+          "type": "item",
+          "settings": {
+            "icon": "lotus",
+            "text": "Traditional\nHerbs"
+          }
+        },
+        "item_004": {
+          "type": "item",
+          "settings": {
+            "icon": "award",
+            "text": "GMP Certified\nFacility"
+          }
+        },
+        "item_005": {
+          "type": "item",
+          "settings": {
+            "icon": "star",
+            "text": "Quality\nYou Can Trust"
+          }
+        },
+        "item_006": {
+          "type": "item",
+          "settings": {
+            "icon": "check-circle",
+            "text": "3rd Party\nLab Tested"
+          }
+        }
+      },
+      "block_order": [
+        "item_001",
+        "item_002",
+        "item_003",
+        "item_004",
+        "item_005",
+        "item_006"
+      ],
+      "settings": {
+        "label": "Product highlights",
+        "heading": "",
+        "style": "chips",
+        "tone": "white",
+        "padding_top": 32,
+        "padding_bottom": 36,
+        "decor_width": 240,
+        "decor_position": "bottom"
+      }
+    },
+    "blend": {
+      "type": "wf-ingredients",
+      "blocks": {
+        "ingredient_007": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-cranberry.jpg",
+            "image_alt": "Fresh cranberries",
+            "name": "Cranberry",
+            "badges": "",
+            "text": "<p>A traditional botanical that has long been used to support urinary tract and fluid balance wellness.*</p>"
+          }
+        },
+        "ingredient_008": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-dandelion.jpg",
+            "image_alt": "Dandelion flower with leaves",
+            "name": "Dandelion",
+            "badges": "",
+            "text": "<p>A widely used herb that supports the body’s natural fluid balance processes.*</p>"
+          }
+        },
+        "ingredient_009": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-green-tea.jpg",
+            "image_alt": "Fresh green tea leaves",
+            "name": "Green Tea",
+            "badges": "",
+            "text": "<p>A naturally occurring antioxidant that supports overall wellness and a healthy metabolism.*</p>"
+          }
+        },
+        "ingredient_00a": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-juniper.jpg",
+            "image_alt": "Juniper berries on a sprig",
+            "name": "Juniper Berry",
+            "badges": "",
+            "text": "<p>A traditional herb used to help support healthy fluid balance and urinary tract wellness.*</p>"
+          }
+        },
+        "ingredient_00b": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-corn-silk.jpg",
+            "image_alt": "Golden corn silk",
+            "name": "Corn Silk",
+            "badges": "",
+            "text": "<p>A traditional botanical that supports the body’s natural fluid elimination processes.*</p>"
+          }
+        },
+        "ingredient_00c": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-paprika.jpg",
+            "image_alt": "Red paprika peppers",
+            "name": "Paprika",
+            "badges": "",
+            "text": "<p>A fruit powder from the pepper family that rounds out the botanical blend.</p>"
+          }
+        },
+        "ingredient_00d": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-watermelon.jpg",
+            "image_alt": "Slices of watermelon",
+            "name": "Watermelon",
+            "badges": "",
+            "text": "<p>A naturally hydrating fruit rich in nutrients that support fluid balance and overall wellness.*</p>"
+          }
+        },
+        "ingredient_00e": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-apple-cider-vinegar.jpg",
+            "image_alt": "Red apples beside a bottle of apple cider vinegar",
+            "name": "Apple Cider Vinegar",
+            "badges": "",
+            "text": "<p>A traditional ingredient used to support healthy digestion and fluid balance processes.*</p>"
+          }
+        },
+        "ingredient_00f": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/wf-ing-buchu.jpg",
+            "image_alt": "Buchu leaves with small white flowers",
+            "name": "Buchu Leaf",
+            "badges": "",
+            "text": "<p>A traditional herb commonly used to support urinary tract and fluid balance wellness.*</p>"
+          }
+        },
+        "ingredient_00g": {
+          "type": "ingredient",
+          "settings": {
+            "image_alt": "Vitamin B6, Potassium & Chloride",
+            "name": "Vitamin B6, Potassium & Chloride",
+            "badges": "B6, K, Cl",
+            "text": "<p>Essential nutrients that help support normal fluid balance and overall wellness.*</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_007",
+        "ingredient_008",
+        "ingredient_009",
+        "ingredient_00a",
+        "ingredient_00b",
+        "ingredient_00c",
+        "ingredient_00d",
+        "ingredient_00e",
+        "ingredient_00f",
+        "ingredient_00g"
+      ],
+      "settings": {
+        "style": "cards",
+        "columns": 5,
+        "eyebrow": "Key Ingredients",
+        "heading": "A Unique Blend for Everyday Wellness.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush combines essential nutrients and traditional botanicals to help support your body’s natural fluid balance and overall wellness.*</p>",
+        "heading_tag": "h2",
+        "button_label": "",
+        "tone": "tint",
+        "padding_top": 56,
+        "padding_bottom": 64,
+        "decor_width": 220,
+        "decor_position": "top"
+      }
+    },
+    "tradition": {
+      "type": "wf-image-text",
+      "settings": {
+        "layout": "overlay",
+        "media_side": "left",
+        "media_shape": "rect",
+        "image": "shopify://shop_images/wf-ingredients-tradition.jpg",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": false,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "image_alt": "Woman in a white shirt sitting on rocks beside a calm lake, face lifted to the sun",
+        "eyebrow": "The Power of Botanicals",
+        "heading": "Traditional Ingredients.\nModern Wellness.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Each ingredient in Brand Name Water Flush has been carefully selected for its long history of use and its role in supporting the body’s natural fluid balance, digestive wellness and overall health.*</p>",
+        "button_label": "Explore the Science",
+        "button_url": "shopify://pages/science",
+        "decor_right": "shopify://shop_images/wf-decor-leaves-right.png"
+      }
+    },
+    "quality": {
+      "type": "wf-image-text",
+      "blocks": {
+        "check_00h": {
+          "type": "check",
+          "settings": {
+            "title": "",
+            "text": "GMP Certified Facility"
+          }
+        },
+        "check_00i": {
+          "type": "check",
+          "settings": {
+            "title": "",
+            "text": "3rd Party Lab Tested"
+          }
+        },
+        "check_00j": {
+          "type": "check",
+          "settings": {
+            "title": "",
+            "text": "High-Quality Ingredients"
+          }
+        },
+        "check_00k": {
+          "type": "check",
+          "settings": {
+            "title": "",
+            "text": "Convenient Daily Capsules"
+          }
+        },
+        "check_00l": {
+          "type": "check",
+          "settings": {
+            "title": "",
+            "text": "Quality You Can Trust"
+          }
+        }
+      },
+      "block_order": [
+        "check_00h",
+        "check_00i",
+        "check_00j",
+        "check_00k",
+        "check_00l"
+      ],
+      "settings": {
+        "layout": "columns",
+        "media_side": "right",
+        "media_shape": "rect",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": false,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "decor_width": 280,
+        "decor_position": "bottom",
+        "eyebrow": "Clean. High-Quality Ingredients",
+        "heading": "You Can Feel Good\nAbout What You Take.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Brand Name Water Flush is manufactured in the USA with high-quality ingredients and tested for purity and potency, so you can feel confident in your wellness routine.</p>",
+        "decor_right": "shopify://shop_images/wf-decor-splash.png"
+      }
+    },
+    "journey": {
+      "type": "wf-image-text",
+      "settings": {
+        "layout": "overlay",
+        "media_side": "left",
+        "media_shape": "rect",
+        "image": "shopify://shop_images/wf-ingredients-journey.jpg",
+        "fade": 90,
+        "heading_tag": "h2",
+        "show_seal": false,
+        "seal_top": "30-DAY",
+        "seal_bottom": "GUARANTEE",
+        "tone": "white",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "decor_width": 240,
+        "decor_position": "bottom",
+        "image_alt": "Stacked smooth stones in shallow water with green leaves",
+        "eyebrow": "Natural Ingredients. Real Results.",
+        "heading": "Support Your\nWellness Journey.",
+        "heading_accent": "",
+        "heading_end": "",
+        "text": "<p>Discover how Brand Name Water Flush can be a simple part of your daily routine to help you feel lighter, more comfortable, and more like you.*</p>",
+        "button_label": "Shop Now",
+        "button_url": "shopify://pages/shop",
+        "decor_right": "shopify://shop_images/wf-decor-leaves-right.png"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "highlights",
+    "blend",
+    "tradition",
+    "quality",
+    "journey"
+  ]
+}

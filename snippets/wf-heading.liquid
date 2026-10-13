@@ -1,0 +1,42 @@
+{%- doc -%}
+  Eyebrow, heading and intro text for the "WF |" sections.
+  The heading has three parts so one line can be shown in the accent colour, as in the mockups.
+  Line breaks typed in the settings are kept.
+
+  @param {string} [eyebrow] - Small uppercase line above the heading
+  @param {string} [heading] - First part of the heading
+  @param {string} [accent] - Part shown in the accent colour, on its own line
+  @param {string} [heading_end] - Part after the accent, on its own line
+  @param {string} [text] - Rich text below the heading
+  @param {string} [tag] - Heading tag, h1 to h3. Defaults to h2
+  @param {string} [size] - xl, lg, md or sm. Defaults to lg
+  @param {string} [class] - Extra class on the wrapper
+
+  @example
+  {% render 'wf-heading', eyebrow: s.eyebrow, heading: s.heading, accent: s.heading_accent, text: s.text %}
+{%- enddoc -%}
+{%- liquid
+  assign h_tag = tag | default: 'h2'
+  assign h_size = size | default: 'lg'
+-%}
+<div class="wf-head {{ class }}">
+  {%- if eyebrow != blank -%}
+    <p class="wf-eyebrow">{{ eyebrow | escape }}</p>
+  {%- endif -%}
+  {%- if heading != blank or accent != blank or heading_end != blank -%}
+    <{{ h_tag }} class="wf-heading wf-heading--{{ h_size }}">
+      {%- if heading != blank -%}
+        <span class="wf-heading__line">{{ heading | escape | newline_to_br }}</span>
+      {%- endif -%}
+      {%- if accent != blank %}
+        <span class="wf-heading__line wf-heading__accent">{{ accent | escape | newline_to_br }}</span>
+      {%- endif -%}
+      {%- if heading_end != blank %}
+        <span class="wf-heading__line">{{ heading_end | escape | newline_to_br }}</span>
+      {%- endif -%}
+    </{{ h_tag }}>
+  {%- endif -%}
+  {%- if text != blank -%}
+    <div class="wf-text rte">{{ text }}</div>
+  {%- endif -%}
+</div>
